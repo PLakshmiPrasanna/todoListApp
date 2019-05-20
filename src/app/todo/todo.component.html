@@ -1,0 +1,35 @@
+<h2>Create to do list</h2>
+<div class=”row “>
+	<div class=”col-8 mx-auto”>
+		<input [(ngModel)]=”graph.name” class=”form-control” placeholder=”name”>
+  </div>
+  <div class=”col-4 mx-auto”>
+   <button (click)=”addTodo(graph.name)” class=”btn btn-secondary”>Todo!</button>
+  </div>
+</div>
+<div class=”row” style=”margin-top:5%;”>
+ <div class=”col-6">
+  <h2>Current list</h2>
+  <div class=”card” *ngFor=”let eachtodo of todoList”>
+    <div class=”card-body”>
+      <div class=”row”>
+        <div class=”col-8">
+          <h5 class=”card-title”>{{eachtodo.name}}</h5>
+        </div>
+        <div class=”col-4">
+          <button (click)=”addDone(eachtodo)” class=”btn btn-success”>Done!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class=”col-6">
+ <h2>Done</h2>
+ <button (click)=”deleteDone()” class=”btn btn-danger” style=”margin-bottom:5%;”>Delete all</button>
+ <div class=”card” *ngFor=”let eachtodo of todoDone”>
+  <div class=”card-body”>
+    <h5 class=”card-title”>{{eachtodo.name}}</h5>
+  </div>
+ </div>
+ </div>
+</div>

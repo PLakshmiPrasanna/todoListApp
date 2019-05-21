@@ -10,6 +10,7 @@ export class TodoComponent {
   todoList = [];
   incrementid = '';
   incrementdoneid = '';
+  todoDone: any;
   graph: TodoCard = {
     id: 1,
     name: 'Your To Do List'
